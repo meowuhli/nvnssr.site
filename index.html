@@ -3,25 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>nvnssr · coming soon</title>
+  <title>nvnssr — скоро открытие</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <div class="glow"></div>
+  <div class="bg-orb orb1"></div>
+  <div class="bg-orb orb2"></div>
+  <div class="bg-orb orb3"></div>
+
   <div class="container">
-    <div class="badge">✦ beta</div>
-    <h1>coming soon</h1>
-    <p class="subhead">we’re building something <span>next level</span></p>
+    <div class="badge">✦ coming soon</div>
+    <h1>скоро<br />открытие</h1>
+    <div class="sub">мы готовим для вас что‑то особенное</div>
     <div class="line"></div>
-    <p class="info">drop your email &amp; be the first to know</p>
-    <form class="form" action="#" method="post">
-      <input type="email" placeholder="your@email.com" required />
-      <button type="submit">notify me</button>
-    </form>
     <div class="status">
       <span class="dot"></span>
-      <span>launching in 2026</span>
+      <span>следите за обновлениями</span>
     </div>
+    <div class="footer">nvnssr · 2026</div>
   </div>
+
+  <!-- анимированные звёзды -->
+  <div class="stars"></div>
+
+  <script>
+    // добавление звёзд через js (чтобы было много)
+    const stars = document.querySelector('.stars');
+    for (let i = 0; i < 120; i++) {
+      const star = document.createElement('div');
+      star.className = 'star';
+      star.style.left = Math.random() * 100 + '%';
+      star.style.top = Math.random() * 100 + '%';
+      star.style.animationDelay = Math.random() * 5 + 's';
+      star.style.width = star.style.height = Math.random() * 3 + 1 + 'px';
+      stars.appendChild(star);
+    }
+  </script>
 </body>
 </html>
