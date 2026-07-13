@@ -3,32 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>nvnssr · скоро открытие</title>
+  <title>nvnssr · скоро</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <!-- Анимированный фон -->
   <div class="bg"></div>
 
   <div class="container">
     <div class="content">
-      <!-- Логотип / бейдж -->
       <div class="badge">✦ nvnssr</div>
 
-      <!-- Заголовок -->
-      <h1>скоро<br />открытие</h1>
+      <!-- Заголовок убран -->
 
-      <!-- Подзаголовок -->
-      <p class="sub">
-        мы готовим для вас<br />
-        <span>что‑то особенное</span>
-      </p>
-
-      <!-- Разделитель -->
+      <p class="sub">мы готовим для вас<br /><span>что‑то особенное</span></p>
       <div class="divider"></div>
 
-      <!-- Таймер -->
       <div class="timer">
         <div class="timer-item">
           <span class="num" id="days">00</span>
@@ -48,17 +38,27 @@
         </div>
       </div>
 
-      <!-- Статус -->
       <div class="status">
         <span class="dot"></span>
         <span>следите за обновлениями</span>
       </div>
-
-      <!-- Футер -->
       <div class="footer">nvnssr · 2026</div>
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    const launchDate = new Date(2026, 9, 13, 0, 0).getTime();
+    function updateTimer() {
+      const now = Date.now();
+      let diff = launchDate - now;
+      if (diff < 0) diff = 0;
+      document.getElementById('days').textContent = String(Math.floor(diff / (1000*60*60*24))).padStart(2, '0');
+      document.getElementById('hours').textContent = String(Math.floor((diff % (1000*60*60*24)) / (1000*60*60))).padStart(2, '0');
+      document.getElementById('minutes').textContent = String(Math.floor((diff % (1000*60*60)) / (1000*60))).padStart(2, '0');
+      document.getElementById('seconds').textContent = String(Math.floor((diff % (1000*60)) / 1000)).padStart(2, '0');
+    }
+    updateTimer();
+    setInterval(updateTimer, 1000);
+  </script>
 </body>
 </html>
