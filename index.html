@@ -1,44 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>nvnssr · скоро</title>
+  <title>nvnssr · скоро открытие</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <div class="background">
-    <div class="gradient"></div>
-    <div class="particles"></div>
-  </div>
+  <!-- Анимированный фон -->
+  <div class="bg"></div>
 
   <div class="container">
-    <div class="badge">✦ soon</div>
-    <h1>скоро...</h1>
-    <p class="sub">что-то удивительное уже в пути</p>
-    <div class="line"></div>
-    <div class="status">
-      <span class="dot"></span>
-      <span>nvnssr · 2026</span>
+    <div class="content">
+      <!-- Логотип / бейдж -->
+      <div class="badge">✦ nvnssr</div>
+
+      <!-- Заголовок -->
+      <h1>скоро<br />открытие</h1>
+
+      <!-- Подзаголовок -->
+      <p class="sub">
+        мы готовим для вас<br />
+        <span>что‑то особенное</span>
+      </p>
+
+      <!-- Разделитель -->
+      <div class="divider"></div>
+
+      <!-- Таймер -->
+      <div class="timer">
+        <div class="timer-item">
+          <span class="num" id="days">00</span>
+          <span class="label">дней</span>
+        </div>
+        <div class="timer-item">
+          <span class="num" id="hours">00</span>
+          <span class="label">часов</span>
+        </div>
+        <div class="timer-item">
+          <span class="num" id="minutes">00</span>
+          <span class="label">минут</span>
+        </div>
+        <div class="timer-item">
+          <span class="num" id="seconds">00</span>
+          <span class="label">секунд</span>
+        </div>
+      </div>
+
+      <!-- Статус -->
+      <div class="status">
+        <span class="dot"></span>
+        <span>следите за обновлениями</span>
+      </div>
+
+      <!-- Футер -->
+      <div class="footer">nvnssr · 2026</div>
     </div>
   </div>
 
-  <script>
-    // частицы (яркие точки)
-    const particles = document.querySelector('.particles');
-    for (let i = 0; i < 80; i++) {
-      const p = document.createElement('div');
-      p.className = 'particle';
-      p.style.left = Math.random() * 100 + '%';
-      p.style.top = Math.random() * 100 + '%';
-      p.style.width = p.style.height = Math.random() * 6 + 2 + 'px';
-      p.style.animationDuration = 4 + Math.random() * 6 + 's';
-      p.style.animationDelay = Math.random() * 5 + 's';
-      const colors = ['#a78bfa', '#7c3aed', '#60a5fa', '#f472b6', '#34d399'];
-      p.style.background = colors[Math.floor(Math.random() * colors.length)];
-      particles.appendChild(p);
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
